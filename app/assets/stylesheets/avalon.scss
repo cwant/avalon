@@ -853,6 +853,13 @@ $accordionPadding: 20px;
   }
 }
 
+.current-section:before {
+  @extend #{'.fa','.fa-arrow-circle-right'};
+  position: relative;
+  margin-left: -15px;
+  left: -6px;
+}
+
 .current-section, .current-stream {
   font-weight: bold;
   border-radius: 3px;
