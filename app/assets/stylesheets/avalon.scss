@@ -853,11 +853,12 @@ $accordionPadding: 20px;
   }
 }
 
+.structure.current-stream:before {
+  margin-left: -12px;
+}
+
 .current-section:before {
-  @extend #{'.fa','.fa-arrow-circle-right'};
-  position: relative;
   margin-left: -15px;
-  left: -6px;
 }
 
 .current-section, .current-stream {
@@ -870,6 +871,11 @@ $accordionPadding: 20px;
   &:hover { @hidden-disabled-link }
   &:active { @hidden-disabled-link }
   &:visited { @hidden-disabled-link }
+  &:before {
+    @extend #{'.fa','.fa-arrow-circle-right'};
+    position: relative;
+    left: -6px;
+  }
 }
 
 div.status-detail {
