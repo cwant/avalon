@@ -73,7 +73,7 @@ services:
       - AVALON_DB_PASSWORD=avalondb
       - SETTINGS__DOMAIN=http://localhost:3000
       - CONTROLLED_VOCABULARY=config/controlled_vocabulary.yml
-      - DATABASE_URL=postgres://avalon:${AVALON_DB_PASSWORD}@db/avalon
+      - DATABASE_URL=postgres://avalon:${AVALON_DB_PASSWORD}@db
       - SETTINGS__DROPBOX__PATH=/masterfiles
       - SETTINGS__DROPBOX__UPLOAD_URI=./masterfiles
       - EMAIL_COMMENTS
@@ -98,6 +98,7 @@ services:
       - SMTP_PASSWORD
       - SMTP_PORT
       - SMTP_USER_NAME
+      - SOLR_TEST_URL=http://solr:8983/solr/avalon_test
       - SOLR_URL=http://solr:8983/solr/avalon_development
       - SETTINGS__STREAMING__CONTENT_PATH=/streamfiles
       - SETTINGS__STREAMING__STREAM_DEFAULT_QUALITY=medium

@@ -1,10 +1,15 @@
+default: &default
+  url: <%= Rails.application.secrets.solr_url %>
+  adapter: solr
 development:
+  url: <%= ENV['SOLR_URL'] || 'http://localhost:8983/solr/avalon_development' %>
   adapter: solr
-  url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:#{ENV.fetch('SOLR_DEVELOPMENT_PORT', 8983)}/solr/avalon_development" %>
-test: &test
+test:
+  url: <%= ENV['SOLR_TEST_URL'] || 'http://localhost:8983/solr/avalon_test' %>
   adapter: solr
-  url: http://localhost:<%= ENV['SOLR_TEST_PORT'] || 8985 %>/solr/avalon_test
+uat:
+  <<: *default
+staging:
+  <<: *default
 production:
-  adapter: solr
-  url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8983/solr/avalon" %>
-
+  <<: *default
