@@ -1,22 +1,31 @@
 version: '2'
 
 volumes:
-  streaming:
-  database:
-  fedora:
-  work:
+volumes:
+  postgres:
+    driver: local
   solr:
+    driver: local
+  fcrepo:
+    driver: local
+  redis:
+    driver: local
+  streaming:
+    driver: local
+  fedora:
+    driver: local
+  work:
+    driver: local
 
 services:
   db:
-    image: avalonmediasystem/db:fedora4
-    volumes:
-      - database:/data
+    image: postgres:9.6-alpine
     environment:
-      - AVALON_DB_PASSWORD=avalondb
-      - FEDORA_DB_PASSWORD
-      - PGDATA=/data
-      - POSTGRES_USER=postgres
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_PASSWORD: IdontCare
+      POSTGRES_USER: avalon
+    volumes:
+      - postgres:/var/lib/postgresql/data
     ports:
       - "5432:5432"
   fedora:
