@@ -6,7 +6,7 @@ default: &default
 development:
   <<: *default
   database: avalon_development
-  url: <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV['DATABASE_URL'] || 'postgresql://avalon:IdontCare@127.0.0.1?pool=5' %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -14,7 +14,7 @@ development:
 test:
   <<: *default
   database: avalon_test
-  url: <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV['DATABASE_URL'] || 'postgresql://avalon:IdontCare@127.0.0.1?pool=5' %>
 
 uat:
   url: <%= Rails.application.secrets.database_url %>

@@ -1,0 +1,3 @@
+Install mediainfo
+Install phantomjs
+Note that path to `lsof` has changed in ubuntu, causing problems for lib/avalon/batch.rb.
