@@ -65,7 +65,7 @@ module Avalon
         end
 
         # We have a valid batch so we can go ahead and delete the manifest file
-        @current_package.manifest.delete
+        # @current_package.manifest.delete
 
         br = register_batch unless replay?
         br = register_replay if replay?

@@ -267,6 +267,10 @@ class MasterFile < ActiveFedora::Base
     # the app server (so the path doesn't need to be the same on both servers)
     new_path = file_location.gsub(Rails.application.secrets.matterhorn_client_media_path,
                                   Rails.application.secrets.matterhorn_server_media_path)
+    if new_path == file_location
+      new_path = file_location.gsub(Rails.application.secrets.dropbox_path,
+                                    Rails.application.secrets.matterhorn_server_media_path)
+    end
 
     FileLocator.new(new_path).uri.to_s
   end

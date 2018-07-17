@@ -4,7 +4,7 @@ domain:
   port: 80
   protocol: http
 dropbox:
-  path: /srv/avalon/dropbox
+  path: <%= Rails.application.secrets.dropbox_path %>
   upload_uri: sftp://avalon.example.edu
 encoding:
   engine_adapter: matterhorn
@@ -18,7 +18,7 @@ ffmpeg:
   path: '/usr/local/bin/ffmpeg'
 email:
   comments: 'avalon-comments@example.edu'
-  notification: 'avalon-notifications@example.edu'
+  notification: 'cwant@computy.library.ualberta.ca'
   support: 'avalon-support@example.edu'
 solr:
   configset: avalon
