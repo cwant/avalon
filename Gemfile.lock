@@ -166,8 +166,15 @@ GIT
       mediashelf-loggable
 
 GIT
-  remote: https://github.com/avalonmediasystem/rubyhorn.git
-  revision: 9849835a4711f671371e8ef8b18e87bb9183cbba
+  remote: https://github.com/bricestacey/ruby-zoom.git
+  revision: 5348fd415520fa08af33ca7b84113a93d2da9f10
+  specs:
+    zoom (0.5.0)
+
+GIT
+  remote: https://github.com/cwant/rubyhorn.git
+  revision: fb80213ddbf6294abd1049db201a321e0c846816
+  branch: cwant/increase-timeout-test
   specs:
     rubyhorn (0.0.6)
       activesupport
@@ -177,12 +184,6 @@ GIT
       net-http-digest_auth
       om
       rest-client
-
-GIT
-  remote: https://github.com/bricestacey/ruby-zoom.git
-  revision: 5348fd415520fa08af33ca7b84113a93d2da9f10
-  specs:
-    zoom (0.5.0)
 
 GIT
   remote: https://github.com/projecthydra-labs/active_encode.git
@@ -545,7 +546,7 @@ GEM
     multi_xml (0.6.0)
     multipart-post (2.0.0)
     mysql2 (0.3.21)
-    net-http-digest_auth (1.4)
+    net-http-digest_auth (1.4.1)
     net-http-persistent (2.9.4)
     net-ldap (0.16.1)
     net-scp (1.2.1)
